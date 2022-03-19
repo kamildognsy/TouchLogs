@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/ANDROID/ShakeLog/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/ANDROID/ShakeLog/shakelogs/src/main/res/layout/activity_log_list.xml" value="0.17074275362318841" />
+        <entry key="..\:/ANDROID/ShakeLog/shakelogs/src/main/res/layout/item_log_list.xml" value="0.17074275362318841" />
       </map>
     </option>
   </component>
