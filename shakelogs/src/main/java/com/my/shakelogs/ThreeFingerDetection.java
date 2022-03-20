@@ -15,21 +15,15 @@ import java.util.List;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ThreeFingerDetection {
-    private ThreeFingerDetection.IThreeFingerTouchListener listener;
     private Context context;
 
     public ThreeFingerDetection(Context context) {
         this.context = context;
     }
 
-    public ThreeFingerDetection(Context context, IThreeFingerTouchListener listener, MotionEvent event) {
-        this.listener = listener;
+    public ThreeFingerDetection(Context context,MotionEvent event) {
         this.context = context;
         CalculateFingerCount(event);
-    }
-
-    public interface IThreeFingerTouchListener {
-        void threeFingerTouch(ArrayList<LogModel> logList);
     }
 
     public void CalculateFingerCount(MotionEvent event) {

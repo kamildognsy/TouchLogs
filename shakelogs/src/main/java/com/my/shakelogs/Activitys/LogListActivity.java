@@ -55,7 +55,7 @@ public class LogListActivity extends AppCompatActivity {
                     copyLogList = new ArrayList<>();
                     adapter = new LogListAdapter(logList , LogListActivity.this);
                     lv.setAdapter(adapter);
-                }else if(charSequence.length() > 3){
+                }else if(charSequence.length() > 1){
                     copyLogList = new ArrayList<>();
                     for(int index=0;index<logList.size();index++){
                         if(logList.get(index).getCreateDate().contains(charSequence)){

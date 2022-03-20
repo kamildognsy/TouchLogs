@@ -1,6 +1,11 @@
 package com.my.shakelogs;
 
+import com.google.gson.Gson;
+
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class LogModel implements Serializable {
@@ -10,16 +15,43 @@ public class LogModel implements Serializable {
     private String response;
     private String userId;
     private String createDate;
+    private Object requestObj;
+    private Object responseObj;
 
     public LogModel() {
+
     }
 
-    public LogModel(String message, String request, String response, String userId) {
+    public LogModel(String message, Object request, Object response, String userId) {
         this.message = message;
-        this.request = request;
-        this.response = response;
+        this.requestObj = request;
+        this.responseObj = response;
         this.userId = userId;
-        this.createDate = new Date().toString();
+        Date date = Calendar.getInstance().getTime();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String strDate = dateFormat.format(date);
+        this.createDate = strDate;
+        Gson gson = new Gson();
+        String requestJson = gson.toJson(request);
+        String responseJson = gson.toJson(response);
+        this.request = requestJson;
+        this.response = responseJson;
+    }
+
+    public Object getRequestObj() {
+        return requestObj;
+    }
+
+    public void setRequestObj(Object requestObj) {
+        this.requestObj = requestObj;
+    }
+
+    public Object getResponseObj() {
+        return responseObj;
+    }
+
+    public void setResponseObj(Object responseObj) {
+        this.responseObj = responseObj;
     }
 
     public int getId() {
