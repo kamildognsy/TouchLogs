@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.TextView;
 
 import com.my.shakelogs.LogModel;
@@ -45,4 +47,6 @@ public class LogListAdapter extends BaseAdapter{
         tv_date.setText("LOG DATE : " + logList.get(i).getCreateDate());
         return v;
     }
+
+
 }
